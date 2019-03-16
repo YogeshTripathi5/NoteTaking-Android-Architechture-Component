@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".addnote.AddNoteActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="?actionBarSize"
+        >
+
+
+    <EditText
+        android:id="@+id/noteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Note title" />
+
+    <EditText
+        android:maxEms="250"
+        android:id="@+id/noteDescription"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Actual note" />
+    </LinearLayout>
+    <android.support.design.button.MaterialButton
+        android:layout_width="128dp"
+        android:layout_height="64dp"
+        android:text="Submit"
+        android:id="@+id/subit"
+        android:layout_gravity="bottom|center"
+        app:backgroundTint="@color/colorPrimary"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_add_white_24dp"
+        app:iconTint="#a4c639"
+        app:rippleColor="@color/colorAccent"/>
+
+</android.support.design.widget.CoordinatorLayout>
