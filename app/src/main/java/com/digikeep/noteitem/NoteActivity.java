@@ -1,21 +1,22 @@
-package com.example.mindscroll.notetaking.noteitem;
+package com.digikeep.noteitem;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.design.bottomappbar.BottomAppBar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mindscroll.notetaking.R;
-import com.example.mindscroll.notetaking.addnote.AddNoteActivity;
-import com.example.mindscroll.notetaking.database.NoteModel;
+import com.digikeep.R;
+import com.digikeep.addnote.AddNoteActivity;
+import com.digikeep.database.NoteModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +27,15 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
     private RecyclerView mNotesRecyclerView;
     private NoteAdapter mAdapter;
     private BottomAppBar bottom_app_bar;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottom_app_bar = findViewById(R.id.bottom_app_bar);
+        name = findViewById(R.id.name);
+        name.setText(getIntent().getStringExtra("name"));
         setSupportActionBar(bottom_app_bar);
 
         FloatingActionButton note = findViewById(R.id.fab);

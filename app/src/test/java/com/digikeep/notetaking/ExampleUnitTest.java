@@ -1,4 +1,4 @@
-package com.example.mindscroll.notetaking;
+package com.digikeep.notetaking;
 
 import org.junit.Test;
 

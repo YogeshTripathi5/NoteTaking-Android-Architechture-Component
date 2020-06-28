@@ -1,12 +1,12 @@
-package com.example.mindscroll.notetaking.addnote;
+package com.digikeep.addnote;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
+import androidx.lifecycle.AndroidViewModel;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.example.mindscroll.notetaking.database.NoteDatabase;
-import com.example.mindscroll.notetaking.database.NoteModel;
+import com.digikeep.database.NoteDatabase;
+import com.digikeep.database.NoteModel;
 
 public class AddNoteViewModel extends AndroidViewModel {
     private NoteDatabase noteDatabase;

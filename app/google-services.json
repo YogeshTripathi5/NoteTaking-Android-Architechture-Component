@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "411547055918",
+    "firebase_url": "https://digikeep-b4c74.firebaseio.com",
+    "project_id": "digikeep-b4c74",
+    "storage_bucket": "digikeep-b4c74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411547055918:android:4750667cd1a1e0beccacbf",
+        "android_client_info": {
+          "package_name": "com.digikeep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411547055918-qbvmilf97n5ir5uc345deqe42ic5a40m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz0BwgVFkZ9B3UqyP0o7ZGQPrUARbSBcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411547055918-qbvmilf97n5ir5uc345deqe42ic5a40m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,18 +1,15 @@
-package com.example.mindscroll.notetaking.addnote;
+package com.digikeep.addnote;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.button.MaterialButton;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.button.MaterialButton;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.mindscroll.notetaking.R;
-import com.example.mindscroll.notetaking.database.NoteModel;
+import com.digikeep.R;
+import com.digikeep.database.NoteModel;
 
 public class AddNoteActivity extends AppCompatActivity {
     private EditText mTitle;

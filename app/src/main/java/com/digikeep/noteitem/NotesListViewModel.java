@@ -1,13 +1,13 @@
-package com.example.mindscroll.notetaking.noteitem;
+package com.digikeep.noteitem;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
-import com.example.mindscroll.notetaking.database.NoteDatabase;
-import com.example.mindscroll.notetaking.database.NoteModel;
+import com.digikeep.database.NoteDatabase;
+import com.digikeep.database.NoteModel;
 
 import java.util.List;
 

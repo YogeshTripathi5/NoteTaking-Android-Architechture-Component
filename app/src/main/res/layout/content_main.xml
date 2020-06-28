@@ -7,8 +7,13 @@
     android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
-
-    <android.support.v7.widget.RecyclerView
+<TextView
+    android:id="@+id/name"
+    android:text="xxxxxxxxxxx"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/name"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
