@@ -10,6 +10,10 @@ public class NoteModel {
     private String noteTitle;
     private String noteDesc;
 
+    public NoteModel()
+    {
+
+    }
     public NoteModel( String noteTitle, String noteDesc) {
 
         this.noteTitle = noteTitle;

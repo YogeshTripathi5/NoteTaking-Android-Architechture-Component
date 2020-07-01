@@ -28,7 +28,7 @@ public class AddNoteViewModel extends AndroidViewModel {
         private    NoteDatabase noteDatabase;
 
         public addAsycTask(NoteDatabase noteDatabase) {
-this.noteDatabase = noteDatabase;
+        this.noteDatabase = noteDatabase;
 
         }
 
