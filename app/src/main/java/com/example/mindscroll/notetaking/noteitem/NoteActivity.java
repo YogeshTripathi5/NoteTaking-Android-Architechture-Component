@@ -48,6 +48,8 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
     private DatabaseReference myRef,myRef2;
     List<NoteModel> noteModels = new ArrayList<>();
     private AddNoteViewModel addNoteViewModel;
+    private String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,8 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         name = findViewById(R.id.name);
         name.setText(getIntent().getStringExtra("name"));
         uniqueid = getIntent().getStringExtra("uniqueid");
+        email = getIntent().getStringExtra("email");
+
         setSupportActionBar(bottom_app_bar);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         FloatingActionButton note = findViewById(R.id.fab);
@@ -102,9 +106,9 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
 
 
 
+        email = email.replace(".","_");
         myRef = database.getReference("message");
-        myRef2 = myRef.child(uniqueid);
-
+        myRef2 = myRef.child(email);
         // Read from the database
         myRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -138,7 +142,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
          myRef = database.getReference("message");
-        myRef.child(uniqueid).setValue(noteModels);
+        myRef.child(email).setValue(noteModels);
 
     }
 

@@ -78,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, NoteActivity.class);
                 intent.putExtra("name",user.getDisplayName());
                 intent.putExtra("uniqueid",user.getUid());
+                intent.putExtra("email",user.getEmail());
+
                 startActivity(intent);
 
                 // ...

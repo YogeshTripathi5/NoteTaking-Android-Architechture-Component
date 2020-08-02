@@ -20,7 +20,7 @@ public class AddNoteViewModel extends AndroidViewModel {
 
 
     public void  addNote(final NoteModel  noteModel)
-    {
+    {if (noteModel!=null)
         new addAsycTask(noteDatabase).execute(noteModel);
     }
 
