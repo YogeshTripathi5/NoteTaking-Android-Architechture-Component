@@ -58,27 +58,26 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         uniqueid = getIntent().getStringExtra("uniqueid");
         setSupportActionBar(bottom_app_bar);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //FloatingActionButton note = findViewById(R.id.fab);
+        FloatingActionButton note = findViewById(R.id.fab);
 
         button2 = findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                 // signOut();
+                  signOut();
             }
         });
-      /*  note.setOnClickListener(new View.OnClickListener() {
+        note.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               *//* Intent addnote = new Intent(NoteActivity.this, AddNoteActivity.class);
-                startActivity(addnote);*//*
+                Intent addnote = new Intent(NoteActivity.this, AddNoteActivity.class);
+                startActivity(addnote);
 
 
 
             }
         });
-*/
 
         mNotesRecyclerView = findViewById(R.id.recyclerView);
         mAdapter = new NoteAdapter(new ArrayList<NoteModel>(), this);
@@ -86,7 +85,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         mNotesRecyclerView.setAdapter(mAdapter);
 
 
-     /*   viewModel = ViewModelProviders.of(this).get(NotesListViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(NotesListViewModel.class);
         viewModel.getNoteList().observe(NoteActivity.this, new Observer<List<NoteModel>>() {
             @Override
             public void onChanged(@Nullable List<NoteModel> noteModels) {
@@ -94,7 +93,6 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
                 randomshit(noteModels);
             }
         });
-*/
         // Write a message to the database
 
 
