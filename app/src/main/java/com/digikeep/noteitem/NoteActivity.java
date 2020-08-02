@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import androidx.annotation.Nullable;
 
+import com.digikeep.addnote.AddNoteViewModel;
 import com.digikeep.login.LoginActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,21 +39,23 @@ import java.util.HashMap;
 import java.util.List;
 
 public class NoteActivity extends AppCompatActivity implements View.OnLongClickListener {
-
+    NoteModel data;
     private NotesListViewModel viewModel;
     private RecyclerView mNotesRecyclerView;
     private NoteAdapter mAdapter;
     private BottomAppBar bottom_app_bar;
     private TextView name;
-    private Button button2;
+    private ImageView button2;
     private String uniqueid;
     private DatabaseReference myRef,myRef2;
     List<NoteModel> noteModels = new ArrayList<>();
-
+    private AddNoteViewModel addNoteViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        addNoteViewModel = ViewModelProviders.of(this).get(AddNoteViewModel.class);
+
         bottom_app_bar = findViewById(R.id.bottom_app_bar);
         name = findViewById(R.id.name);
         name.setText(getIntent().getStringExtra("name"));
@@ -89,8 +93,11 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         viewModel.getNoteList().observe(NoteActivity.this, new Observer<List<NoteModel>>() {
             @Override
             public void onChanged(@Nullable List<NoteModel> noteModels) {
-               mAdapter.addNote(noteModels);
-                randomshit(noteModels);
+                if(noteModels!=null && !noteModels.isEmpty()) {
+                    mAdapter.addNote(noteModels);
+                    randomshit(noteModels);
+
+                }
             }
         });
         // Write a message to the database
@@ -99,17 +106,20 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
 
         myRef = database.getReference("message");
         myRef2 = myRef.child(uniqueid);
+
         // Read from the database
         myRef2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 noteModels.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    NoteModel university = postSnapshot.getValue(NoteModel.class);
-                    noteModels.add(university);
+                    data = postSnapshot.getValue(NoteModel.class);
+                    noteModels.add(data);
                 }
 
                 mAdapter.addNote(noteModels);
+
+                addNoteViewModel.addNote(data);
             }
 
             @Override
@@ -150,6 +160,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
     public boolean onLongClick(View view) {
         NoteModel noteModel = (NoteModel) view.getTag();
         viewModel.deleteNote(noteModel);
+        myRef2.child(uniqueid).removeValue();
 
         Toast.makeText(this, noteModel.getNoteTitle() + "->Just deleted", Toast.LENGTH_SHORT).show();
         return true;
