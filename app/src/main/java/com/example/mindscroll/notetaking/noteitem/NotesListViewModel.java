@@ -1,4 +1,4 @@
-package com.digikeep.noteitem;
+package com.notetaking.noteitem;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
@@ -6,8 +6,8 @@ import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 
-import com.digikeep.database.NoteDatabase;
-import com.digikeep.database.NoteModel;
+import com.notetaking.database.NoteDatabase;
+import com.notetaking.database.NoteModel;
 
 import java.util.List;
 

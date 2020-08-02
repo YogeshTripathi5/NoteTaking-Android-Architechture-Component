@@ -1,12 +1,12 @@
-package com.digikeep.addnote;
+package com.notetaking.addnote;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 
-import com.digikeep.database.NoteDatabase;
-import com.digikeep.database.NoteModel;
+import com.notetaking.database.NoteDatabase;
+import com.notetaking.database.NoteModel;
 
 public class AddNoteViewModel extends AndroidViewModel {
     private NoteDatabase noteDatabase;

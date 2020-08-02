@@ -1,20 +1,22 @@
-package com.digikeep.addnote;
+package com.example.mindscroll.notetaking.addnote;
 
 import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+
+import com.example.mindscroll.notetaking.R;
 import com.google.android.material.button.MaterialButton;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.digikeep.R;
-import com.digikeep.database.NoteModel;
+
+import com.notetaking.database.NoteModel;
 
 public class AddNoteActivity extends AppCompatActivity {
     private EditText mTitle;
     private EditText mDescription;
-    private AddNoteViewModel addNoteViewModel;
+    private com.notetaking.addnote.AddNoteViewModel addNoteViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class AddNoteActivity extends AppCompatActivity {
         mTitle = findViewById(R.id.noteTitle);
         mDescription = findViewById(R.id.noteDescription);
 
-        addNoteViewModel = ViewModelProviders.of(this).get(AddNoteViewModel.class);
+        addNoteViewModel = ViewModelProviders.of(this).get(com.notetaking.addnote.AddNoteViewModel.class);
 
         //FloatingActionButton note = findViewById(R.id.fab);
 

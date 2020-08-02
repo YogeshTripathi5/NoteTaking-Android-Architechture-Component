@@ -1,4 +1,4 @@
-package com.digikeep.noteitem;
+package com.example.mindscroll.notetaking.noteitem;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,8 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.digikeep.R;
-import com.digikeep.database.NoteModel;
+
+import com.example.mindscroll.notetaking.R;
+import com.notetaking.database.NoteModel;
 
 import java.util.List;
 

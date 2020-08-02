@@ -1,4 +1,4 @@
-package com.digikeep.noteitem;
+package com.example.mindscroll.notetaking.noteitem;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import androidx.annotation.Nullable;
 
-import com.digikeep.addnote.AddNoteViewModel;
-import com.digikeep.login.LoginActivity;
+import com.example.mindscroll.notetaking.R;
+import com.example.mindscroll.notetaking.addnote.AddNoteActivity;
+import com.example.mindscroll.notetaking.login.LoginActivity;
+import com.notetaking.addnote.AddNoteViewModel;
+
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,16 +21,12 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.digikeep.R;
-import com.digikeep.addnote.AddNoteActivity;
-import com.digikeep.database.NoteModel;
+import com.notetaking.database.NoteModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,12 +34,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class NoteActivity extends AppCompatActivity implements View.OnLongClickListener {
     NoteModel data;
-    private NotesListViewModel viewModel;
+    private com.notetaking.noteitem.NotesListViewModel viewModel;
     private RecyclerView mNotesRecyclerView;
     private NoteAdapter mAdapter;
     private BottomAppBar bottom_app_bar;
@@ -89,7 +87,7 @@ public class NoteActivity extends AppCompatActivity implements View.OnLongClickL
         mNotesRecyclerView.setAdapter(mAdapter);
 
 
-        viewModel = ViewModelProviders.of(this).get(NotesListViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(com.notetaking.noteitem.NotesListViewModel.class);
         viewModel.getNoteList().observe(NoteActivity.this, new Observer<List<NoteModel>>() {
             @Override
             public void onChanged(@Nullable List<NoteModel> noteModels) {

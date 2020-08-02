@@ -1,4 +1,4 @@
-package com.digikeep.database;
+package com.notetaking.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

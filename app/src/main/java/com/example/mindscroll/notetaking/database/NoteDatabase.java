@@ -1,4 +1,4 @@
-package com.digikeep.database;
+package com.notetaking.database;
 
 import androidx.room.Database;
 import androidx.room.Room;
